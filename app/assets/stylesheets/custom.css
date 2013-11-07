@@ -1,0 +1,29 @@
+
+@font-face { font-family: pico; src: url('/fonts/PICO.TTF'); } 
+@font-face { font-family: pico; font-weight: bold; src: url('/fonts/PICO.TTF');}
+
+.fubar{
+float:right;
+}
+.top-bar .row{
+	margin: 0px !important;
+}
+.top-bar .row p{
+font-size:30px;
+font-family:pico;
+letter-spacing:;
+}
+.top-bar .row p a {
+color:white;
+}
+#loginbar {
+	color: white;
+	font-size: 12px;
+	text-align: right;
+}
+#loginbar a{
+color:grey;
+}
+#loginbar a:hover{
+color:white;
+}
