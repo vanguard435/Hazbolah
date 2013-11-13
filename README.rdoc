@@ -1,3 +1,14 @@
+== reflect
+
+== >^..^<
+
+Reflect is a webapp that allows users to add and track traits.
+
+Reflect is still extremely faulty
+
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
