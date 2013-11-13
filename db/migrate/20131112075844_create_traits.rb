@@ -3,6 +3,7 @@ class CreateTraits < ActiveRecord::Migration
     create_table :traits do |t|
       t.string :name
       t.integer :frequency
+      t.integer :gcounter
 
       t.timestamps
     end

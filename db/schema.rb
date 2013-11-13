@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20131112075844) do
   create_table "traits", force: true do |t|
     t.string   "name"
     t.integer  "frequency"
+    t.integer  "gcounter"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

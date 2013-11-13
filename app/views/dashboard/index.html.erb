@@ -1,4 +1,14 @@
+<% @usertrait.each do |n| %>
+<%= link_to "#{n.name}", counter_index_path, method: :POST %>
+<% end %>
+<br>
+<br>
 <%= form_for :trait, :url=>traits_path, :method=> :POST do |f| %>
   Add a Trait: <%= f.text_field :name %><br />
+  <button type="button" class="btn btn-default"><%= f.submit %></button>
+  <% end %>
+
+  <%= form_for :trait, :url=>traits_path, :method=> :DELETE do |f| %>
+  Remove a Trait: <%= f.number_field :id %><br />
   <%= f.submit %>
 <% end %>

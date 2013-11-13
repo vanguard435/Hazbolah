@@ -5,6 +5,7 @@ class TraitsController < ApplicationController
   def create
   	@trait = Trait.create(trait_params)
     TraitUser.create(:user_id => current_user.id, :trait_id => @trait.id)
+    redirect_to dashboard_index_path
   end
 
   def new
@@ -14,13 +15,15 @@ class TraitsController < ApplicationController
   end
 
   def show
-  	Trait.find(params[:id])
   end
 
   def update
   end
 
   def destroy
+    @dtrait = Trait.find(params[:id])
+    @dtrait.destroy
+    redirect_to dashboard_index_path
   end
 
   def trait_params

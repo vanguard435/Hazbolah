@@ -10,6 +10,7 @@ Reflect::Application.routes.draw do
 
   resources :traits
 
+  resources :counter
 
   #get "trackables/search" => "trackables#search"
 
