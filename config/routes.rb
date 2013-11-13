@@ -2,30 +2,14 @@ Reflect::Application.routes.draw do
   root to: "home#index"
 
   get "dashboard/index" => "dashboard#index"
+  get "dashboard/profile" => "dashboard#profile"
+
+
 
   devise_for :users
 
-  resources :trackables do
+  resources :traits
 
-
-    get :show
-    get :new
-    post :create
-    put :update
-    get :edit
-    delete :destroy
-
-    collection do 
-        get :index
-        get :search
-        post :search
-        delete :destroy_all
-    end
-
-    member do
-    end
-
-  end
 
   #get "trackables/search" => "trackables#search"
 

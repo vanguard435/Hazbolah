@@ -13,7 +13,8 @@
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+	<title><%= content_for?(:title) ? yield(:title) : "Reflect" %></title>
+  <%= favicon_link_tag 'favicon.ico' %>
 
 
 
@@ -29,12 +30,16 @@
         <div class="row">
           <div class="large-6 columns">
             <p>
-              <%= link_to "Reflect", root_path %>
+              <% if user_signed_in? %>
+                <%= link_to "Reflect", dashboard_index_path %>
+              <% else %>
+                <%= link_to "Reflect", root_path %>
+              <% end %>
             </p>
           </div>
           <div class="large-6 columns" id="loginbar">
             <% if user_signed_in? %>
-              Signed in as <%= current_user.email %> Not you?
+              Signed in as <%= link_to "#{current_user.email}", dashboard_profile_path %> Not you?
               <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
             <% else %>
               <%= link_to "Sign up", new_user_registration_path %> | <%= link_to "sign in", new_user_session_path %>

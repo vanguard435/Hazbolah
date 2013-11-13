@@ -1,5 +1,4 @@
 class Trait < ActiveRecord::Base
-	belongs_to :user
-
-
+  has_many :trait_user
+  has_many :users, :through => :trait_user
 end
