@@ -3,7 +3,7 @@ class CreateTraitUsers < ActiveRecord::Migration
     create_table :trait_users do |t|
       t.belongs_to :user
       t.belongs_to :trait
-      t.integer :counter
+      t.integer :counter, :default => 0
 
       t.timestamps
     end

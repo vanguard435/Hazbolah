@@ -2,8 +2,7 @@ class CreateTraits < ActiveRecord::Migration
   def change
     create_table :traits do |t|
       t.string :name
-      t.integer :frequency
-      t.integer :gcounter
+      t.integer :gcounter, :default => 0
 
       t.timestamps
     end
