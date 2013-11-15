@@ -27,3 +27,42 @@ color:grey;
 #loginbar a:hover{
 color:white;
 }
+
+#trait_list {
+	padding-bottom:50px;
+	padding-top:50px;
+	border:dotted;
+	border-radius: 50px;
+	text-align:center;		
+	background-color:black;
+	border-color:white;
+	box-shadow: 5px 10px 20px black;
+}
+#trait_list a{
+	color:grey;
+	font-family:pico;
+	font-size:25px;
+}
+#trait_list a:hover{
+	color:white;
+}
+
+#add_trait_form{
+	font-family:pico;
+	font-size:20px;
+}
+
+.formbutton{
+	font-size:20px;
+	color:black;
+}
+
+
+
+input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+font-family:pico;
+border-radius: 5px;
+box-shadow: 5px 5px 20px black;
+ }

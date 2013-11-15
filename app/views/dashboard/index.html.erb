@@ -1,14 +1,17 @@
-<% @usertrait.each do |n| %>
-<%= link_to "#{n.name} " , counter_index_path(:trait_id => n), method: :POST %>
-<% end %>
-<br>
-<br>
-<%= form_for :trait, :url=>traits_path, :method=> :POST do |f| %>
-  Add a Trait: <%= f.text_field :name %><br />
-<%= f.submit %>
-  <% end %>
+<div class="row">
+	<% @usertrait.each do |n| %>
+		<div class ="large-4 columns" id="trait_list">
+			<%= link_to "#{n.name} #{Trait.find(n.id).trait_user.first.counter} Times" , counter_index_path(:trait_id => n), method: :POST %>
+		</div>
+	<% end %>
+</div>
 
-  <%= form_for :trait, :url=>traits_path, :method=> :DELETE do |f| %>
-  Remove a Trait: <%= f.number_field :id %><br />
-  <%= f.submit %>
-<% end %>
+<br>
+<br>
+<row>
+	<div class ="large-3 columns">
+	</div>
+<%= form_for :trait, :url=>traits_path, :method=> :POST, html: {id: "add_trait_form"} do |f| %>
+  Add a Trait: <%= f.text_field :name, :placeholder => "Add something you do here!", class:"form_text_field" %>
+<%= f.submit 'Add it!', class: "formbutton", id: "formid" %>
+  <% end %>

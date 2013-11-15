@@ -20,6 +20,7 @@
 
 	<%= stylesheet_link_tag   "application" %>
 	<%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= javascript_include_tag "assets/javascripts/custom.js" %>
 
   <%= csrf_meta_tags %>
 </head>
@@ -39,6 +40,7 @@
           </div>
           <div class="large-6 columns" id="loginbar">
             <% if user_signed_in? %>
+
               Signed in as <%= link_to "#{current_user.email}", dashboard_profile_path %> Not you?
               <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
             <% else %>
@@ -47,7 +49,7 @@
           </div>
         </div> 
       </div>
-      <div class="large-12 columns">
+      <div class="large-12 columns" id="flasher">
         <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
         <% end %>
