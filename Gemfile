@@ -12,6 +12,8 @@ gem 'zurb-foundation'
 
 gem 'pjax_rails'
 
+gem 'foundation-icons-sass-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

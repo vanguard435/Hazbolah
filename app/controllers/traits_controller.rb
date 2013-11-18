@@ -1,5 +1,8 @@
 class TraitsController < ApplicationController
   def index
+        @trait = TraitUser.where(trait_id: params[:id]).first   
+        @trait.destroy
+    redirect_to dashboard_index_path
   end
 
   def create
@@ -22,9 +25,7 @@ class TraitsController < ApplicationController
   end
 
   def delete
-    @trait = Trait.find(trait_params).destroy_
-    TraitUser.find(:user_id => current_user.id, :trait_id => @trait.id).destroy
-    redirect_to dashboard_index_path
+
   end
 
   def trait_params

@@ -37,6 +37,8 @@ color:white;
 	background-color:black;
 	border-color:white;
 	box-shadow: 5px 10px 20px black;
+	margin-bottom:20px;
+	position:relative;
 }
 #trait_list a{
 	color:grey;
@@ -101,4 +103,22 @@ box-shadow: 5px 5px 20px black;
 	border-color:black;
 	box-shadow: 5px 10px 20px black;
  	text-shadow: 5px 4px 5px grey;
+}
+
+.top-bar{
+	border:solid;
+	border-color:white;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+	margin-bottom:10px;
+	padding-bottom:45px;
+}
+.fi-prohibited{
+	color:grey;
+	font-size:20px;
+	display:none;
+}
+
+.icon-white a:hover{
+ 	color:white;
 }

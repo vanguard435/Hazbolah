@@ -3,3 +3,4 @@
 			<%= link_to "#{n.name} #{Trait.find(n.id).trait_user.first(:conditions => ["trait_id = #{n.id} AND user_id = #{current_user.id}"]).counter} Times" , counter_index_path(:trait_id => n), method: :POST %>
 		</div>
 	<% end %>
+	
