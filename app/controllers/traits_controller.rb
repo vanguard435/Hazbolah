@@ -21,9 +21,9 @@ class TraitsController < ApplicationController
   def update
   end
 
-  def destroy
-    @dtrait = Trait.find(params[:id])
-    @dtrait.destroy
+  def delete
+    @trait = Trait.find(trait_params).destroy_
+    TraitUser.find(:user_id => current_user.id, :trait_id => @trait.id).destroy
     redirect_to dashboard_index_path
   end
 

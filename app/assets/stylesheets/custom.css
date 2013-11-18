@@ -52,11 +52,6 @@ color:white;
 	font-size:20px;
 }
 
-.formbutton{
-	font-size:20px;
-	color:black;
-}
-
 
 
 input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
@@ -66,3 +61,44 @@ font-family:pico;
 border-radius: 5px;
 box-shadow: 5px 5px 20px black;
  }
+
+ .kill{
+ 	padding:20px;
+ 	text-align:center;
+ 	border:solid;
+ 	border-radius:40px;
+ 	font-family:pico;
+ 	font-size:20px;
+ 	text-shadow: 5px 4px 5px grey;
+ }
+
+.devise_wrap{
+	font-family:pico;
+}
+
+.devise_header_wrap{
+	font-size:30px;
+	margin-bottom:10px;
+}
+
+#formid a:hover{
+	background-color:black;
+}
+
+#delete_a_trait{
+	margin:0px;
+	padding:0px
+	margin-top:0px;
+	line-height:1;
+	text-align:right;
+}
+
+.trait_box{
+	padding-top:20px;
+	border:dotted;
+	border-radius: 50px;		
+	background-color:white;
+	border-color:black;
+	box-shadow: 5px 10px 20px black;
+ 	text-shadow: 5px 4px 5px grey;
+}

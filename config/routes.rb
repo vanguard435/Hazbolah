@@ -3,7 +3,7 @@ Reflect::Application.routes.draw do
 
   get "dashboard/index" => "dashboard#index"
   get "dashboard/profile" => "dashboard#profile"
-
+  get "dashboard/comparison" => "dashboard#comparison"
 
 
   devise_for :users

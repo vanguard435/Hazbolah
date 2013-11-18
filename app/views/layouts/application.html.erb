@@ -20,16 +20,15 @@
 
 	<%= stylesheet_link_tag   "application" %>
 	<%= javascript_include_tag "vendor/custom.modernizr" %>
-  <%= javascript_include_tag "assets/javascripts/custom.js" %>
-
+  <%= javascript_include_tag "custom.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="app">
   <div class="row">
     <div class="large-12 columns">
-      <div class="top-bar">
+      <nav class="top-bar">
         <div class="row">
-          <div class="large-6 columns">
+          <div class="large-3 columns">
             <p>
               <% if user_signed_in? %>
                 <%= link_to "reflect", dashboard_index_path %>
@@ -38,7 +37,7 @@
               <% end %>
             </p>
           </div>
-          <div class="large-6 columns" id="loginbar">
+          <div class="large-9 columns" id="loginbar">
             <% if user_signed_in? %>
 
               Signed in as <%= link_to "#{current_user.email}", dashboard_profile_path %> Not you?
@@ -48,11 +47,17 @@
             <% end %>
           </div>
         </div> 
-      </div>
-      <div class="large-12 columns" id="flasher">
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <% end %>
+      </nav>
+      <div class="row">
+        <div class="large-3 columns">
+        </div>
+        <div class="large-6 columns">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}", :class =>"kill" %>
+          <% end %>
+        </div>
+        <div class="large-3 columns">
+        </div>
       </div>
       <%= yield %>
     </div>

@@ -6,4 +6,8 @@ class DashboardController < ApplicationController
 
   def profile
   end
+
+  def comparison
+  end
+  
 end
