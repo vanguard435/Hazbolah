@@ -6,8 +6,10 @@ class TraitsController < ApplicationController
   end
 
   def create
-  	@trait = Trait.find_or_create_by(trait_params)
-    TraitUser.find_or_create_by(:user_id => current_user.id, :trait_id => @trait.id)
+
+  	@trait = Trait.find_or_create_by(name: params[:trait][:name].downcase)
+
+        TraitUser.find_or_create_by(:user_id => current_user.id, :trait_id => @trait.id)
     redirect_to dashboard_index_path
     return false
   end

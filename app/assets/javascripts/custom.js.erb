@@ -1,0 +1,12 @@
+$(document).ready(function(){
+  setTimeout(function(){
+    $('.kill').fadeOut("slow");
+  }, 2000);
+  	$('.trait_list').each(function(){
+  		$(this).click(function(e){
+  		if(e.target === this) {
+  	  $(this).find(".fi-prohibited").fadeToggle();
+  			}
+  		})
+  	})
+ })

@@ -28,7 +28,7 @@ color:grey;
 color:white;
 }
 
-#trait_list {
+.trait_list {
 	padding-bottom:50px;
 	padding-top:50px;
 	border:dotted;
@@ -40,12 +40,13 @@ color:white;
 	margin-bottom:20px;
 	position:relative;
 }
-#trait_list a{
+.trait_list a{
 	color:grey;
 	font-family:pico;
 	font-size:25px;
+word-wrap: break-word
 }
-#trait_list a:hover{
+.trait_list a:hover{
 	color:white;
 }
 
