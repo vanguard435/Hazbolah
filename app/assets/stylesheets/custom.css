@@ -9,6 +9,8 @@ float:right;
 	margin: 0px !important;
 }
 .top-bar .row p{
+position:absolute;
+left:5%;
 font-size:30px;
 font-family:pico;
 letter-spacing:;
@@ -107,11 +109,7 @@ box-shadow: 5px 5px 20px black;
 }
 
 .top-bar{
-	border:solid;
-	border-color:white;
-	border-bottom-left-radius:20px;
-	border-bottom-right-radius:20px;
-	margin-bottom:10px;
+	margin-bottom:0e !important;
 	padding-bottom:45px;
 }
 .fi-prohibited{
@@ -122,4 +120,51 @@ box-shadow: 5px 5px 20px black;
 
 .icon-white a:hover{
  	color:white;
+}
+
+.f-row{
+}
+
+.slideshow-wrapper{
+	margin:0px;
+	padding-top:0px;
+}
+.background{
+    background-image: url(/app/assets/images/cheesy.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:absolute;
+    top:45px;
+    z-index:1;
+}
+
+.cancelmargin{
+}
+
+.kill{
+	z-index:10;
+}
+
+
+.columns #cheesycopycat{
+	font-family:pico;
+	color:black;
+	font-size:65px;
+	text-align:center;
+	position:relative;
+	top:160px;
+	z-index:9;
+}
+
+.columns #cheesytext	{
+	font-family:sans-serif;
+	color:black;
+	font-size:40px;
+	text-align:center;
+	position:relative;
+	top:70px;
+	z-index:9;
+	font-weight:700px;
+	width:68%;
+	margin:auto;
 }

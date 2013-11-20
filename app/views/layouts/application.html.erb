@@ -22,33 +22,36 @@
   <%= javascript_include_tag "custom.js" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="app">
-  <div class="row">
-    <div class="large-12 columns">
-      <nav class="top-bar">
-        <div class="row">
-          <div class="large-3 columns">
-            <p>
-              <% if user_signed_in? %>
-                <%= link_to "reflect", dashboard_index_path %>
-              <% else %>
-                <%= link_to "reflect", root_path %>
-              <% end %>
-            </p>
-          </div>
-          <div class="large-9 columns" id="loginbar">
-            <% if user_signed_in? %>
 
-              Signed in as <%= link_to "#{current_user.email}", dashboard_profile_path %> Not you?
-              <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-            <% else %>
-              <%= link_to "Sign up", new_user_registration_path %> | <%= link_to "sign in", new_user_session_path %>
-            <% end %>
-          </div>
-        </div> 
-      </nav>
-      <div class="row">
+
+<body class="app">
+  <div class="f-row">
+        <nav class="top-bar">
+          <div class="row">
+            <div class="large-3 columns">
+              <p>
+                <% if user_signed_in? %>
+                  <%= link_to "reflect", dashboard_index_path %>
+                <% else %>
+                  <%= link_to "reflect", root_path %>
+                <% end %>
+              </p>
+            </div>
+            <div class="large-9 columns" id="loginbar">
+              <% if user_signed_in? %>
+
+                Signed in as <%= link_to "#{current_user.email}", dashboard_profile_path %> Not you?
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              <% else %>
+                <%= link_to "Sign up", new_user_registration_path %> | <%= link_to "sign in", new_user_session_path %>
+              <% end %>
+            </div>
+          </div> 
+        </nav>
+  </div>
+      <div class="row cancelmargin">
         <div class="large-3 columns">
+          &nbsp;
         </div>
         <div class="large-6 columns">
           <% flash.each do |name, msg| %>
@@ -56,11 +59,10 @@
           <% end %>
         </div>
         <div class="large-3 columns">
+          &nbsp;
         </div>
       </div>
       <%= yield %>
-    </div>
-  </div>
   <%= javascript_include_tag "application" %>
 </body>
 
