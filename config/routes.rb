@@ -1,4 +1,5 @@
 Reflect::Application.routes.draw do
+  get "day/create"
   root to: "home#index"
 
   get "dashboard/index" => "dashboard#index"

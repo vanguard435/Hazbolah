@@ -1,15 +1,15 @@
 <div class="row">
 		<% @usertrait.each do |n| %>
-		<div class="wrapper_trait">
-			<div class ="large-4 columns trait_list">
-				<%= link_to "#{n.name} #{Trait.find(n.id).trait_user.first(:conditions => ["trait_id = #{n.id} AND user_id = #{current_user.id}"]).counter} Times" , counter_index_path(:trait_id => n), method: :POST %>
-				<%= link_to (raw("<i class='fi-prohibited'></i>")),traits_path(:id => n), {:class => "icon-white"} %>
-				<div class= "row">
-					<div class="large-12 columns">					
+			<div class="wrapper_trait">
+				<div class ="large-4 columns trait_list">
+					<%= link_to "#{n.name} #{Trait.find(n.id).trait_user.first(:conditions => ["trait_id = #{n.id} AND user_id = #{current_user.id}"]).counter} Times" , counter_index_path(:trait_id => n), method: :POST %>
+					<%= link_to (raw("<i class='fi-prohibited'></i>")),traits_path(:id => n), {:class => "icon-white"} %>
+						<div class= "row">
+							<div class="large-12 columns">					
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		<% end %>
 		
 </div>
@@ -21,7 +21,7 @@
 	&nbsp;
 	</div>
 	<div class ="large-10 columns trait_box">
-		<%= form_for :trait, :url=>traits_path, :method=> :POST, html: {id: "add_trait_form"} do |f| %>
+		<%= form_for :trait, :url=>traits_path, :method=> :POST, html: {id: "add_trait_form", } do |f| %>
 		  Add a Trait: <%= f.text_field :name, :placeholder => "Add something you do here!", class:"form_text_field" %>
 		<%= f.submit 'Add it!', class: "button prefix", id: "formid" %>
 		<% end %>
