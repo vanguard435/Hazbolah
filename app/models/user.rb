@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :trait_user
   has_many :traits, :through => :trait_user
+  has_many :days
 
   def ctraituserfind
   	@findtraituser = Trait.find(n.id).trait_user.first.counter

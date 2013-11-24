@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112075844) do
+ActiveRecord::Schema.define(version: 20131122125410) do
+
+  create_table "day_traits", force: true do |t|
+    t.integer  "trait_id"
+    t.integer  "day_id"
+    t.integer  "icounter",   default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "days", force: true do |t|
+    t.integer  "user_id"
+    t.string   "currentnow"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "trait_users", force: true do |t|
     t.integer  "user_id"

@@ -1,6 +1,8 @@
 Reflect::Application.routes.draw do
   root to: "home#index"
 
+  get "dashboard/days" => "dashboard#days"
+  post "day/create" => "day#create"
   get "dashboard/index" => "dashboard#index"
   get "dashboard/profile" => "dashboard#profile"
   get "dashboard/comparison" => "dashboard#comparison"

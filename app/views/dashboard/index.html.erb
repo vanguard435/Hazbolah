@@ -1,3 +1,6 @@
+<% # Start your day is something I want users to see the first time they log in EACH day %>
+<%= link_to "Start your day", day_create_path, method: :POST %>
+
 <div class="row">
 		<% @usertrait.each do |n| %>
 			<div class="wrapper_trait">
@@ -31,4 +34,8 @@
 	</div>
 </div>
 
+<% @daysall.each do |n| %>
+<%= link_to "#{n.currentnow}" , dashboard_days_path(:day_id => n), remote: true, :class => "replacemiddle" %> 
+<% # I'm trying to pass in the day_id into the controller to get back the day that's beeng clicked, and thus, represent all traits under the day that has been clicked %>
+<% end %>
 
