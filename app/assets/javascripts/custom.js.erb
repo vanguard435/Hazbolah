@@ -9,9 +9,18 @@ $(document).ready(function(){
   			}
   		})
   	})
-    $(".replacemiddle").click(function(){
-    $(".wrapper_trait").fadeOut();
-    //Insert AJAX content here if i can possibly do it
-    $(".wrapper_trait").fadeIn();
-    })
-})
+  // $(document).on("ajax:complete", ".replacemiddle",function(xhr, data, status){
+  //  console.log(data);
+  //     $(".wrapper_trait").replaceWith(data);
+//   });
+
+$("a.replacemiddle").bind("ajax:complete", function(evt, data, status, xhr){
+$.getJSON(data, function(data){
+  for(var i = 0 , i < data.length; i++){
+    console.log(data[i])
+  )};
+}
+ 
+
+  })
+

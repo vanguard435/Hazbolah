@@ -1,12 +1,14 @@
 class DashboardController < ApplicationController
 
   def days
-    	respond_to do |format|
+
+      @daytrait = DayTrait.where(day_id: params[:day_id])
+      respond_to do |format|
    		format.js{
-   			@daytrait
+   		  render :json => @daytrait
    		}
    	end
-   	@daytrait = DayTrait.where(day_id: params[:day_id])
+
 
     #After passing in the params, I have no idea how to represent 
     #the above data through ajax or smth.
