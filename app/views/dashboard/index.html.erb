@@ -24,7 +24,7 @@
 	&nbsp;
 	</div>
 	<div class ="large-10 columns trait_box">
-		<%= form_for :trait, :url=>traits_path(:day_id => f, :method=> :POST, html: {id: "add_trait_form", } do |f| %>
+		<%= form_for :trait, :url=>traits_path, :method=> :POST, html: {id: "add_trait_form", } do |f| %>
 		  Add a Trait: <%= f.text_field :name, :placeholder => "Add something you do here!", class:"form_text_field" %>
 		<%= f.submit 'Add it!', class: "button prefix", id: "formid" %>
 		<% end %>

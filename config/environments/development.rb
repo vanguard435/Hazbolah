@@ -26,4 +26,18 @@ Reflect::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+#Added per active admin install instructions
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+   ActionMailer::Base.smtp_settings = 
+  {
+
+    :address            => 'smtp.gmail.com',
+    :port               => 587,
+    :domain             => 'gmail.com', #you can also use google.com
+    :authentication     => :plain,
+    :user_name          => '',
+    :password           => ''
+  }
 end
