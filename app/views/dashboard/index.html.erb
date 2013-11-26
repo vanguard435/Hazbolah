@@ -1,19 +1,13 @@
 <% # Start your day is something I want users to see the first time they log in EACH day %>
+<% lastsignin = current_user.last_sign_in_at.strftime("%d/%m/%Y") %>
+<%  existence = DateTime.now.strftime("%d/%m/%Y") %>
+<% if Day.first(:conditions => ["currentnow = #{lastsignin} AND user_id = #{current_user.id}"]) == nil  %>
 <%= link_to "Start your day", day_create_path, method: :POST %>
+<% end %>
 
 <div class="row">
-		<% @usertrait.each do |n| %>
-			<div class="wrapper_trait">
-				<div class ="large-4 columns trait_list">
-					<%= link_to "#{n.name} #{Trait.find(n.id).trait_user.first(:conditions => ["trait_id = #{n.id} AND user_id = #{current_user.id}"]).counter} Times" , counter_index_path(:trait_id => n), method: :POST %>
-					<%= link_to (raw("<i class='fi-prohibited'></i>")),traits_path(:id => n), {:class => "icon-white"} %>
-						<div class= "row">
-							<div class="large-12 columns">					
-						</div>
-					</div>
-				</div>
-			</div>
-		<% end %>
+		<div class="wrapper_trait">
+		</div>
 		
 </div>
 
@@ -34,8 +28,8 @@
 	</div>
 </div>
 
-<% @daysall.each do |n| %>
-<%= link_to "#{n.currentnow}" , dashboard_days_path(:day_id => n), remote: true, :class => "replacemiddle" %> 
-<% # I'm trying to pass in the day_id into the controller to get back the day that's beeng clicked, and thus, represent all traits under the day that has been clicked %>
-<% end %>
-
+<div class="side_bar">
+	<% @daysall.each do |n| %>
+		<%= link_to "#{n.currentnow}" , dashboard_days_path(:day_id => n), remote: true, :class => "replacemiddle" %> <br>
+	<% end %>
+</div>

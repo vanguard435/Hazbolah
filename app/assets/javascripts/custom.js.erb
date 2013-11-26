@@ -2,31 +2,5 @@ $(document).ready(function(){
   setTimeout(function(){
     $('.kill').fadeOut("slow");
   }, 2000);
-  	$('.trait_list').each(function(){
-  		$(this).click(function(e){
-  		if(e.target === this) {
-  	  $(this).find(".fi-prohibited").fadeToggle();
-  			}
-  		})
-  	})
-   $(document).on("ajax:success", ".replacemiddle",function(xhr, data, status){
-     var json = $.parseJSON(data);
-     for (x=0;x<json.length;x++){
-       console.log(json[0]);
-       // now you have the json object, time to extract its attributes
-     }
-     
-     //console.log(data);
-  //     $(".wrapper_trait").replaceWith(data);
-   });
-
-//$("a.replacemiddle").bind("ajax:complete", function(evt, data, status, xhr){
-//$.getJSON(data, function(data){
- // for(var i = 0 , i < data.length; i++){
-//    console.log(data[i])
-//  )};
-//}
- 
-
   })
 

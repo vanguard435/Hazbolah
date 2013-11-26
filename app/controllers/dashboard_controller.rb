@@ -4,9 +4,7 @@ class DashboardController < ApplicationController
 
       @daytrait = DayTrait.where(day_id: params[:day_id])
       respond_to do |format|
-   		format.js{
-   		  render :json => @daytrait
-   		}
+        format.js   
    	end
 
 
