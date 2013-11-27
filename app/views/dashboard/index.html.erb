@@ -1,10 +1,3 @@
-<% # Start your day is something I want users to see the first time they log in EACH day %>
-<% lastsignin = current_user.last_sign_in_at.strftime("%d/%m/%Y") %>
-<%  existence = DateTime.now.strftime("%d/%m/%Y") %>
-<% if Day.first(:conditions => ["currentnow = #{lastsignin} AND user_id = #{current_user.id}"]) == nil  %>
-<%= link_to "Start your day", day_create_path, method: :POST %>
-<% end %>
-
 <div class="row">
 		<div class="wrapper_trait">
 		</div>
