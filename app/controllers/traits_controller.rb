@@ -1,7 +1,7 @@
 class TraitsController < ApplicationController
   def index
-
-        @daytrait = DayTrait.where(trait_id: params[:id]).first   
+        @clickedalreadydate = cookies[:nday_id]
+        @daytrait = DayTrait.first(:conditions => ["id = #{params[:id]} AND day_id = #{@clickedalreadydate}"]) 
         @trait = @daytrait.trait.id
         @destruction = TraitUser.where(trait_id: @trait).first
         @destruction.destroy

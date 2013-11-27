@@ -1,11 +1,9 @@
-
 <% @daytrait =	 DayTrait.where(day_id: params[:day_id]) %>
-		<% today = @daytrait.first.day.currentnow %>
+		<% today =	 Day.find(params[:day_id]).currentnow %>
 		<h3 id = "date-proclaim"> Date Selected: <%= today %> </h3>
 		<h4 class = "date-header">
 		</h4>
 <% @daytrait.each do |t| %>
-
 		<div class ="large-4 columns trait_list">
 			<%= link_to "#{t.trait.name} #{DayTrait.first(:conditions => ["trait_id = #{t.trait_id} AND id = #{t.id}"]).icounter} Times" , counter_index_path(:daytrait_id => t), method: :POST %>
 			<%= link_to (raw("<i class='fi-prohibited'></i>")),traits_path(:id => t), {:class => "icon-white"} %>
