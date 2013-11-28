@@ -1,5 +1,9 @@
 <div class="row">
 		<div class="wrapper_trait">
+			<h1 id ="welcome"> Hey there </h1>
+			<div class="large-12 columns" style="text-align:right">
+				<p class="content">Click any of the dates that you want to track stuff on to get started </p>
+			</div>
 		</div>
 		
 </div>
@@ -7,22 +11,10 @@
 <br>
 <br>
 <div class= "row">
-	<div class="large-1 columns">
-	&nbsp;
-	</div>
-	<div class ="large-10 columns trait_box">
-		<%= form_for :trait, :url=>traits_path, :method=> :POST, html: {id: "add_trait_form", } do |f| %>
-		  Add a Trait: <%= f.text_field :name, :placeholder => "Add something you do here!", class:"form_text_field" %>
-		<%= f.submit 'Add it!', class: "button prefix", id: "formid" %>
-		<% end %>
-	</div>
-	<div class="large-1 columns">
-	&nbsp;
-	</div>
-</div>
 
 <div class="side_bar">
 	<% @daysall.each do |n| %>
 		<%= link_to "#{n.currentnow}" , dashboard_days_path(:day_id => n), remote: true, :class => "replacemiddle" %> <br>
 	<% end %>
 </div>
+

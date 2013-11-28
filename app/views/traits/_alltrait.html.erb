@@ -1,5 +1,6 @@
-<% @daytrait =	 DayTrait.where(day_id: params[:day_id]) %>
-		<% today =	 Day.find(params[:day_id]).currentnow %>
+   		<% @clickedalreadydate = cookies[:nday_id] %>
+<% @daytrait =	 DayTrait.where(day_id: @clickedalreadydate) %>
+		<% today =	 Day.find(@clickedalreadydate).currentnow %>
 		<h3 id = "date-proclaim"> <i class="fi-marker"></i> <%= today %> </h3>
 		<h4 class = "date-header">
 		</h4>

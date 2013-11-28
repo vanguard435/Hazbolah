@@ -1,0 +1,8 @@
+$('.wrapper_trait').html("<%= escape_javascript(render :partial => 'alltrait', :locals => { :f => @daytrait } ) %>");
+  	$('.trait_list').each(function(){
+  		$(this).click(function(e){
+  		if(e.target === this) {
+  	  $(this).find(".fi-prohibited").fadeToggle();
+  			}
+  		})
+  	})

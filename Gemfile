@@ -7,6 +7,9 @@ group :development do
     gem 'sqlite3'
 end
 
+
+gem "highcharts-rails", "~> 3.0.0"
+
 gem 'devise'
 
 gem 'zurb-foundation'

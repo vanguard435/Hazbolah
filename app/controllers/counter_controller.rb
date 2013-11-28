@@ -13,7 +13,11 @@ def create
 	hazbolah2 = TraitUser.first(:conditions => ["trait_id = #{pi_trait_id} AND user_id = #{current_user.id}"])
 	hazbolah2.counter += 1
 	hazbolah2.save
-    redirect_to dashboard_index_path
+
+    respond_to do |format|
+      format.js   
+   	end
+   	
   end
 
   def index
