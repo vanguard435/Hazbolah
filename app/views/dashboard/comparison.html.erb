@@ -1,0 +1,49 @@
+<script type="text/javascript" charset="utf-8">
+$(function () {
+        $('#guailan').highcharts({
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Activities across all time'
+            },
+            subtitle: {
+                text: 'Cool looking chart'
+            },
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: { // don't display the dummy year
+                    month: '%e. %b',
+                    year: '%b'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'Frequency'
+                },
+                min: 0
+            },
+            tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' dateTimeLabelFormats';
+                }
+            },
+            
+            series: [
+<% @datacycle = DayTrait.all.group_by{ |t| t.trait_id} %>
+<% @datacycle.each do |n,p| %>
+{name:
+"<%= Trait.find(n).name %>",
+data:[
+<% p.each do |k| %>
+[Date.UTC(<%= k.created_at.strftime("%Y, %m, %d") %>), <%= k.icounter %>],
+<% end %>
+]
+},
+<% end %>
+]
+        });
+    });
+</script>
+<div id = "guailan" style="width:1400px; height:680px;"></div>

@@ -38,7 +38,7 @@
             </div>
             <div class="large-9 columns" id="loginbar">
               <% if user_signed_in? %>
-
+                <%= link_to (raw("<i class='fi-graph-bar' id = 'graphbar'></i>")) ,dashboard_comparison_path %>
                 Signed in as <%= link_to "#{current_user.email}", dashboard_profile_path %> Not you?
                 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
               <% else %>

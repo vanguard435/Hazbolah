@@ -1,6 +1,8 @@
 
 @font-face { font-family: pico; src: url('/fonts/PICO.TTF'); } 
 @font-face { font-family: pico; font-weight: bold; src: url('/fonts/PICO.TTF');}
+@font-face { font-family: wonder; src: url('/fonts/WONDER.TTF'); }
+@font-face { font-family: wonder; font-weight: bold; src: url('/fonts/WONDER.TTF');} 
 
 .fubar{
 float:right;
@@ -40,11 +42,12 @@ color:white;
 	box-shadow: 5px 10px 20px black;
 	margin-bottom:20px;
 	position:relative;
+	max-height:120px;
 }
 .trait_list a{
 	color:grey;
-	font-family:pico;
-	font-size:25px;
+	font-family:WONDER;
+	font-size:15px;
 word-wrap: break-word
 }
 .trait_list a:hover{
@@ -228,6 +231,9 @@ box-shadow: 5px 5px 20px black;
 	height:800px;
 	width:200px;	
 }
+.side_bar a{
+	font-family:wonder;
+}
 .replacemiddle{
 	font-size:20px;
 	font-family:Helvetica;
@@ -245,6 +251,7 @@ box-shadow: 5px 5px 20px black;
 	padding-bottom:0px;
 	margin:0px;
 	padding:0px;
+	font-family:wonder;
 }
 
 .wrapper_trait h1{
@@ -253,4 +260,11 @@ box-shadow: 5px 5px 20px black;
 
 #welcome{
 	text-align:right;
+}
+
+#graphbar{
+	font-size:30px;
+	position:relative;
+	top:2.5px;
+	padding-right:10px
 }
