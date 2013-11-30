@@ -2,5 +2,20 @@ $(document).ready(function(){
   setTimeout(function(){
     $('.kill').fadeOut("slow");
   }, 2000);
-  })
+ })
 
+$(document).ready(function(){
+$('#notsidebar').slimScroll({
+    height: '700px',
+    start: 'bottom',
+    railVisible: 'true'
+});
+})
+
+document.addEventListener("page:load", function(){
+	$('#notsidebar').slimScroll({
+    height: '700px',
+    start: 'bottom',
+    railVisible: 'true'
+});
+});

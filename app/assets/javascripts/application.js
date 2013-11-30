@@ -24,6 +24,7 @@
 //= require highcharts/modules/funnel
 //= require highcharts/modules/heatmap
 //= require highcharts/modules/no-data-to-display
+//= require jquery.slimscroll.min
 //= require_tree .
 
 

@@ -1,11 +1,57 @@
 <div class="row">
-		<div class="wrapper_trait">
-			<h1 id ="welcome"> Hey there </h1>
-			<div class="large-12 columns" style="text-align:right">
-				<p class="content">Click any of the dates that you want to track stuff on to get started </p>
-			</div>
+	<div class="wrapper_trait">
+		<div class= "row">				
+			<% if @traitexistence.empty? %>
+				<br><br>
+					<h1 style="text-align:center;">Hi there!</h1>	
+					<p class="content" style="text-align:center;" > Welcome! You seem to not have anything tracked so let's get you started.</p>
+					<h1 style="text-align:center;">Where to go?</h1>	
+					<p class="content" style="text-align:center;" > Click on the date on the left to get started (the date should be today). Add a trait to begin.</p>
+					<h1 style="text-align:center;font-size:80px;padding-bottom:0px">Tips.</h1>
+					<h5 style="text-align:center;position:relative;bottom:40px; "> Which means read this, it's super important</h5>	
+					<div class="row">
+						<div class="large-12 columns">
+							<p class="content" style="text-align:center; font-family:wonder;" >1. Come back here once you've added a trait</p>
+							<p class="content" style="text-align:center; font-family:wonder;" >2. Add traits of the same name if you do it across days. It helps the graph.</p>
+							<p class="content" style="text-align:center; font-family:wonder;" >3. Graph is located on the top bar as graph icon.</p>	
+						</div>
+					</div>
+				<% else %>
+				<div class="large-12 columns">
+					<h1 id ="welcome"> At a glance. </h1>
+				</div>
+				<div class="row">
+					<div class="large-4 columns">
+						<div class="big-icons">
+							<i class="fi-results-demographics"></i>
+							<p class="content"> You've logged in <b><%= current_user.sign_in_count %> times</b> so far!</p>
+						</div>
+					</div>
+					<div class="large-4 columns">
+						<div class="big-icons">
+							<i class="fi-foot"></i>
+							<p class="content"> You've tracked <b><%= TraitUser.where(user_id: current_user.id).count %> different</b> things about yourself! </p>
+						</div>
+					</div>
+					<div class="large-4 columns">
+						<div class="big-icons">
+							<i class="fi-plus"></i>
+							<p class="content"> You've tracked yourself <b> <%= TraitUser.sum(:counter, :conditions => {:user_id => current_user.id}) %> times! </b>  </p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="big-icons">
+								<i class="fi-paw"></i>
+								<p class="content"> Your tracks for <b style="font-family:wonder;">"<%= TraitUser.where(user_id: current_user.id).order(counter: :desc).first.trait.name  %>"</b> are the highest at <b><%= TraitUser.maximum(:counter, :conditions => {:user_id => current_user.id})  %> times!</b>  </p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
 		</div>
-		
+	</div>		
 </div>
 
 <br>
@@ -13,8 +59,9 @@
 <div class= "row">
 
 <div class="side_bar">
-	<% @daysall.each do |n| %>
-		<%= link_to "#{n.currentnow}" , dashboard_days_path(:day_id => n), remote: true, :class => "replacemiddle" %> <br>
-	<% end %>
+	<div id="notsidebar">
+		<% @daysall.each do |n| %>
+			<%= link_to "#{n.currentnow}" , dashboard_days_path(:day_id => n), remote: true, :class => "replacemiddle" %> <br>
+		<% end %>
+	</div>
 </div>
-

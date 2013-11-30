@@ -5,4 +5,9 @@ $('.wrapper_trait').html("<%= escape_javascript(render :partial => 'alltrait', :
   	  $(this).find(".fi-prohibited").fadeToggle();
   			}
   		})
+  	$('#notsidebar').slimScroll({
+	    height: '700px',
+	    start: 'bottom',
+	    railVisible: 'true'
+	});
   	})

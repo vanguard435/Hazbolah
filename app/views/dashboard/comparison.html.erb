@@ -8,7 +8,7 @@ $(function () {
                 text: 'Activities across all time'
             },
             subtitle: {
-                text: 'Cool looking chart'
+                text: 'A factual reflection of you'
             },
             xAxis: {
                 type: 'datetime',
@@ -26,7 +26,7 @@ $(function () {
             tooltip: {
                 formatter: function() {
                         return '<b>'+ this.series.name +'</b><br/>'+
-                        Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' dateTimeLabelFormats';
+                        Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y + ' times';
                 }
             },
             
@@ -46,4 +46,16 @@ data:[
         });
     });
 </script>
-<div id = "guailan" style="width:1400px; height:680px;"></div>
+
+
+
+
+<div class="row">
+    <div class= "large-12 columns">
+        <h1 style="text-align:center"> Here's a reflection of you. </h1>
+    </div>
+</div>
+
+<div id = "guailan" style="width:80%;margin:auto;"></div>
+
+

@@ -1,12 +1,12 @@
 class TraitsController < ApplicationController
   def index
+        deletionid = params[:id]
         @clickedalreadydate = cookies[:nday_id]
-        @daytrait = DayTrait.first(:conditions => ["id = #{params[:id]} AND day_id = #{@clickedalreadydate}"]) 
-        @trait = @daytrait.trait.id
+        @daytrait = DayTrait.first(:conditions => ["id = #{deletionid} AND day_id = #{@clickedalreadydate}"]) 
         @daytrait.destroy
-    respond_to do |format|
-      format.js
-    end
+      respond_to do |format|
+        format.js
+      end
   end
 
   def create
