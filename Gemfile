@@ -7,6 +7,10 @@ group :development do
     gem 'sqlite3'
 end
 
+group :production do
+	gem 'pg'
+end
+
 gem 'jquery-slimscroll-rails'
 
 gem "highcharts-rails", "~> 3.0.0"
